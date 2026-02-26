@@ -5,76 +5,247 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"Zero-Knowledge" Password Managers - What IT Leaders Must Know in 2026</title>
     <style>
-        body {
+        * {
             margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
         .container {
-            max-width: 900px;
+            max-width: 1000px;
+            margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 60px 40px;
             text-align: center;
         }
-        h1 {
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 60px 40px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .intro h2 {
             color: #2c3e50;
-            margin-bottom: 10px;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
-        .subtitle {
+        
+        .intro p {
             color: #5a6c7d;
-            font-style: italic;
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .section-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #4CAF50;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section-card h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-number {
+            background: #4CAF50;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+        
+        .section-card p {
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+            margin: 50px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.1em;
             margin-bottom: 30px;
+            opacity: 0.95;
         }
-        .infographic {
-            width: 100%;
-            max-width: 816px;
-            height: auto;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
+        
         .download-btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: #4CAF50;
-            color: white;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
-            margin: 10px;
-            transition: background-color 0.3s;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
+        
         .download-btn:hover {
-            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         }
+        
         .footer {
-            margin-top: 30px;
-            color: #666;
-            font-size: 14px;
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            color: #5a6c7d;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>"Zero-Knowledge" Password Managers</h1>
-        <h2>What IT Leaders Must Know in 2026</h2>
-        <p class="subtitle">A structured guide to hardening your credential security posture</p>
+        <div class="header">
+            <h1>"Zero-Knowledge" Password Managers</h1>
+            <p>What IT Leaders Must Know in 2026</p>
+        </div>
         
-        <img src="password-manager-infographic.svg" alt="Zero-Knowledge Password Managers Infographic" class="infographic">
-        
-        <div>
-            <a href="password-manager-infographic.svg" download class="download-btn">Download SVG</a>
+        <div class="content">
+            <div class="intro">
+                <h2>A Structured Guide to Hardening Your Credential Security Posture</h2>
+                <p>In 2026, a groundbreaking study from ETH Zurich revealed 27 attack scenarios across major password managers. This infographic breaks down what you need to know to protect your organization.</p>
+            </div>
+            
+            <div class="sections">
+                <div class="section-card">
+                    <h3><span class="section-number">1</span> The Research Finding</h3>
+                    <p>A 2026 study from ETH Zurich and Università della Svizzera italiana found 27 attack scenarios across Bitwarden, Dashlane, LastPass, and 1Password.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">2</span> The Threat Triangle</h3>
+                    <p>Three conditions that break "zero-knowledge": Account Recovery Flows, Sharing & Org Features, and Metadata & Downgrade Logic.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">3</span> The Attack Surface Map</h3>
+                    <p>Protect three layers: Crown-Jewel Secrets, Shared Org Vaults, and Recovery & Metadata.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">4</span> The Security OS</h3>
+                    <p>Four essential controls: Authenticate with Argon2id + FIDO2, Isolate sensitive secrets, Recover safely, and Audit regularly.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">5</span> The Hardening Engine</h3>
+                    <p>A 4-step system: Assess (30 min), Configure (2 hrs), Test (weekly), and Review (monthly).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">6</span> The Trust Ladder</h3>
+                    <p>Build trust in 5 layers: Strong Master Password, Strong KDF, Hardware MFA, Self-Hosted Option, and Peppered Secrets.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">7</span> The Feedback Loop</h3>
+                    <p>Quarterly analysis: Check vendor incidents, vault sizes, recovery settings, and MFA distribution.</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">8</span> The 3-Level Risk Funnel</h3>
+                    <p>Three control levels: Preventive (MFA, KDF), Containment (segmentation), and Recovery (incident response).</p>
+                </div>
+                
+                <div class="section-card">
+                    <h3><span class="section-number">9</span> The Security Scorecard</h3>
+                    <p>Track 5 metrics: Argon2id KDF, FIDO2 MFA, Cloud recovery disabled, Crown-jewels isolated, and Quarterly audits.</p>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h2>Download the Full Infographic</h2>
+                <p>Get the complete visual guide in print-ready format (Letter size, 8.5" x 11")</p>
+                <a href="password-manager-infographic.svg" download class="download-btn">Download SVG</a>
+            </div>
         </div>
         
         <div class="footer">
             <p>📎 Found this useful? Share it with your team!</p>
+            <p><a href="https://github.com/vonderheiden/password-manager-infographic">View on GitHub</a></p>
         </div>
     </div>
 </body>
